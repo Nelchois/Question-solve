@@ -1,4 +1,5 @@
 These codes for first_step in baekjoon.
+From 10869 ~ 25083 are arithmetic operation example.
 ```
 #baekjoon10869
 A, B = input().split(' ')
