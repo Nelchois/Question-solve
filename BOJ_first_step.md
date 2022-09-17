@@ -56,47 +56,4 @@ print(" \\. \". L_r'")
 print('   `~\\/')
 print('      |')
 print('      |')
-
-#baek1330
-A, B = map(int, input().split())
-if A > B:
-    print('>')
-elif A < B:
-    print('<')
-elif A == B:
-    print('==')
-
-#baek9498
-Score = int(input())
-if 90 <= Score <= 100:
-    print('A')
-elif 80 <= Score <= 89:
-    print('B')
-elif 70 <= Score <= 79:
-    print('C')
-elif 60 <= Score <= 69:
-    print('D')
-else:
-    print('F')
-
-#baek2753
-Year = int(input())
-if (Year % 4 == 0) and (Year % 100 != 0):
-    print(1)
-elif Year % 400 == 0:
-    print(1)
-else:
-    print(0)
-
-#baek 14681
-X = int(input())
-Y = int(input())
-if (X > 0) and (Y > 0):
-    print(1)
-elif (X < 0) and (Y > 0):
-    print(2)
-elif (X < 0) and (Y < 0):
-    print(3)
-else:
-    print(4)
 ```
