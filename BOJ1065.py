@@ -21,7 +21,7 @@ def n_1000():
             count += 1
         elif ((i%100) < 10) and (i >= 100):
             continue
-        elif ((i%100) > 10) and (i >= 100):
+        elif ((i%100) >= 10) and (i >= 100):
             A = (i//100)
             B = (i%100)//10
             C = (i%10)
