@@ -1,16 +1,4 @@
 import sys
-def check():
-    n = int(sys.stdin.readline())
-    count = 0
-    if n < 10:
-        count += n
-    elif 10 <= n <100:
-        count += n
-    elif 100 <= n < 1000:
-        count += n_1000(n)
-
-    return print(count)
-
 def n_1000():
     n = int(sys.stdin.readline())
     count = 0
