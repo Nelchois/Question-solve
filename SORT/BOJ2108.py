@@ -8,8 +8,10 @@ for i in range(count):
 
 num_list.sort()
 cnt = Counter(num_list).most_common(2)
-
-print(f'{sum(num_list)/count:.0f}')
+ans_2 = f'{sum(num_list)/count:.0f}'
+if ans_2 == '-0':
+    ans_2 = 0
+print(ans_2)
 print(num_list[count//2])
 if len(num_list) > 1:
     if cnt[0][1] == cnt[1][1]:
