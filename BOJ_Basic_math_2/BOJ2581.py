@@ -8,10 +8,10 @@ for i in len(num_list):
     if ck == 2 or 3 or 5 or 7:
         ans.append(ck)
     else:
-if len(ans) == 0:
-    print(-1)
-else:
-    print(sum(ans))
-    print(min(ans))
+    if len(ans) == 0:
+        print(-1)
+    else:
+        print(sum(ans))
+        print(min(ans))
 
      
