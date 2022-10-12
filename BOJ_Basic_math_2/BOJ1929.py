@@ -1,11 +1,11 @@
 import sys
 m, n = map(int, sys.stdin.readline().rstrip().split(' '))
-num_list = [True]*(n)
+num_list = [True]*(n+1)
 for i in range(2, int(n ** 0.5) + 1):
     if num_list[i] == True:
-        for j in range(i+i, n, i):
+        for j in range(i+i, n+1, i):
             num_list[j] = False
-ans = [i for i in range(2, n) if num_list[i] == True]
+ans = [i for i in range(2, n+1) if num_list[i] == True]
 
 if m <= 2:
     print(*ans, sep= '\n')
