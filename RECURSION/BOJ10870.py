@@ -1,7 +1,4 @@
 import sys
-
-
-import sys
 n = int(sys.stdin.readline())
 count = 0
 def fibo(n):
