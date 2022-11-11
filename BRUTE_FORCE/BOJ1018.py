@@ -65,9 +65,8 @@ for i in range(n):
                     idx_2[i][j] = 1
 for k in range(n):
     for l in range(m):
-        if k + 8 <= n and l + 8 <= m: 
-            st_idx = idx_2[k][l]
-            
+        
+
         else: continue
 
 print(*idx_2, sep= '\n')
