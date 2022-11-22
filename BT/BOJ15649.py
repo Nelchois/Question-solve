@@ -11,5 +11,4 @@ def make_line():
             number_line.append(i)
             make_line()
             number_line.pop()
-
 make_line()
