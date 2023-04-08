@@ -23,6 +23,7 @@ def make_board(H, W, ck_board):
     return new_board
 
 def make_answer(road_list, ck_board, answer_list):
+    print(len(road_list))
     while road_list:
         r = road_list.popleft()
         tu_list = deque()
@@ -47,8 +48,10 @@ def make_answer(road_list, ck_board, answer_list):
                 ck_board[x][y] = 0
                 broke += 1
             ck_board = make_board(H, W, ck_board)
-        answer_list.append(broke)
-        
+        if broke > limit:
+            answer_list.append(limit)
+        else:
+            answer_list.append(broke)
     return
 
 Case = int(sys.stdin.readline())
@@ -70,4 +73,3 @@ for _ in range(Case):
     print(limit - max(answer_list))
 
             
-
