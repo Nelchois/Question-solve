@@ -1,3 +1,4 @@
+#https://school.programmers.co.kr/learn/courses/30/lessons/70129
 def solution(s):
     board = ''
     count = 0
