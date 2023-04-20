@@ -10,7 +10,6 @@ Eng_number = {"0": "zero",
     "8": "eight",
     "9": "nine"
 }
-
 for i,j in Eng_number.items():
     if j in example_line:
         example_line = example_line.replace(j,i)
