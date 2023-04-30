@@ -19,7 +19,6 @@ def make(idx, banned_id, visit, possible):
     
 def solution(user_id, banned_id):
     answer = 0
-    same = []
     possible = dict()
     for ban in banned_id:
         for p in range(len(user_id)):
