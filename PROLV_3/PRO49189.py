@@ -1,26 +1,40 @@
 #https://school.programmers.co.kr/learn/courses/30/lessons/49189
 from collections import deque
+
 def solution(n, edge):
     answer = 0
-    map_dict = dict()
+    map_dict = {f'{i}' : [] for i in range(1, n + 1)}
     edge.sort(key = lambda x:x[0])
+    for m in edge:
+        top, bot = m[0], m[1]
+        map_dict[str(top)].append(bot)
+        map_dict[str(bot)].append(top)
+    visit = dict()
     length = dict()
-    length[str(1)] = 0
-    edge = deque(edge)
-    while edge:
-        ma = edge.popleft()
-        mother = str(ma[0])
-        son = str(ma[1])
-        if mother in length and son not in length:
-            length[son] = length[mother] + 1
-        elif mother not in length:
-            length[mother] = length[son] + 1
-            
-    """for i in range(1, len(map_dict)+1):
-        ma = map_que.popleft()
-        mother = str(i)
-    """    
-    print(length)
-    ans = list(length.values())
-    answer = ans.count(max(ans))
+    length['1'] = 0
+    visit['1'] = True
+    mapq = deque()
+    mapq.append(map_dict['1'])
+    mapq[0].append(1)
+
+    while mapq:
+        ma = mapq.popleft()
+        now = str(ma.pop())
+        for i in ma:
+            node = str(i)
+            if node not in visit:
+                visit[node] = True
+                next_ma = map_dict[node]
+                next_ma.append(i)
+                mapq.append(next_ma)
+                length[node] = length[now] + 1
+            else:
+                if length[now] + 1 < length[node]:
+                    length[node] = length[now] + 1
+
+    if len(visit) < n-1:
+        answer = n - len(visit)
+    else:
+        ans = list(length.values())
+        answer = ans.count(max(ans))
     return answer
