@@ -8,7 +8,6 @@ def dp(sticker):
         max_num = max(ans)
     else:
         max_num = max(sticker)
-
     return max_num
 
 def solution(sticker):
