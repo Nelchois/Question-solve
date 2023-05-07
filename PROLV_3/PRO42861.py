@@ -1,16 +1,20 @@
+#https://school.programmers.co.kr/learn/courses/30/lessons/42861#
+
 from collections import deque
 
-def check(visit, connect, n, que):
+def check(connect, n):
+    que = deque()
+    que.append(connect['0'])
+    visit = [False] * n
+    visit[0] = True
     while que:
         ma = que.popleft()
         for i in ma:
-            ck = str(i)
-            if ck not in visit:
-                visit[ck] = True
-                que.append(connect[ck])
-    if len(visit) == n:
-        return True
-    return False
+            key = str(i)
+            if visit[i] == False:
+                visit[i] = True
+                que.append(list(connect[key]))
+    return visit
 
 def solution(n, costs):
     answer = 0
@@ -18,35 +22,23 @@ def solution(n, costs):
     connect = {f'{i}': set() for i in range(n)}
     costs = deque(costs)
     cost = 0
-    start_point = 0
     for li in costs:
-        key = str(li[0])
-        son = str(li[1])
-        que = deque()
-        if start_point == 0:
-            connect[key].add(int(son))
-            que.append(connect[key])
-            start_point = key
-            
-        visit = dict()
-        while que:
-            ma = que.popleft()
-            for i in ma:
-                ck = str(i)
-                if ck not in visit:
-                    visit[ck] = True
-                    if len(connect[ck]) > 0:
-                        que.append(connect[ck])
-        
-        if len(visit) == n:
-            cost += li[2]
-            break
-        
-        if son not in visit:
-            connect[key].add(int(son))
-            cost += li[2]
-        
-            
-    print(costs)
-    print(cost)
+        left, right, c = str(li[0]), str(li[1]), li[2]
+        if len(connect[left]) == 0 or len(connect[right]) == 0:
+            connect[left].add(int(right))
+            connect[right].add(int(left))
+            cost += c
+
+    visit = check(connect, n)
+
+    while not all(visit):
+        for ma in costs:
+            if visit[ma[0]] != visit[ma[1]]:
+                cost += ma[2]
+                connect[str(ma[0])].add(ma[1])
+                connect[str(ma[1])].add(ma[0])
+                break
+        visit = check(connect, n)
+
+    answer = cost
     return answer
