@@ -33,3 +33,13 @@ def solution(tickets):
     ans_list.sort(reverse = True)
     answer = list(ans_list.pop())
     return answer
+
+"""
+test case for check order
+
+tickets(string[][]) : [["ICN", "JFK"], ["ICN", "AAD"], ["JFK", "ICN"]]
+return : ["ICN", "JFK", "ICN", "AAD"]
+
+tickets = [["ICN", "A"], ["A", "B"], ["A", "C"], ["B", "A"], ["C", "A"]]
+["ICN", "A", "B", "A", "C", "A"]
+"""
