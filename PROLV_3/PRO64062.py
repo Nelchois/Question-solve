@@ -1,4 +1,5 @@
 #https://school.programmers.co.kr/learn/courses/30/lessons/64062#
+#https://readydeveloperone.blogspot.com/2023/05/64062.html (Korean explain of how to solve)
 from collections import deque
 def solution(stones, k):
     answer = 200000001
