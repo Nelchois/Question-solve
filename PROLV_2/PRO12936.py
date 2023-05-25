@@ -5,18 +5,6 @@ def total(n):
     elif n == 1:
         return 1
     
-def dfs(board, n, visit):
-    if len(board) == n:
-        ans_list.append(list(board))
-        return
-    for i in range(1, n + 1):
-        if not visit[f'{i}']:
-            board.append(i)
-            visit[f'{i}'] = True
-            dfs(board, n, visit)
-            board.pop()
-            visit[f'{i}'] = False
-
 def order(o, k, n):
     t = total(n - o)
     num = 1
