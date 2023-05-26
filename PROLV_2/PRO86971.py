@@ -33,6 +33,7 @@ def solution(n, wires):
                             que.append(num)
                             visit[str(num)] = True
                 ans_list.add(abs(len(visit) - (n - len(visit))))
+                break
     answer = min(list(ans_list))
             
     return answer
