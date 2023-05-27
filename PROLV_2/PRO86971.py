@@ -1,4 +1,5 @@
 #https://school.programmers.co.kr/learn/courses/30/lessons/86971
+#https://readydeveloperone.blogspot.com/2023/05/86971.html
 from collections import deque
 def solution(n, wires):
     answer = -1
