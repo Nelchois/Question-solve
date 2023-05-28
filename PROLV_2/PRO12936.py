@@ -1,4 +1,5 @@
 #https://school.programmers.co.kr/learn/courses/30/lessons/12936
+#https://readydeveloperone.blogspot.com/2023/05/12936.html
 def total(n):
     if n > 1:
         return n*total(n-1)
