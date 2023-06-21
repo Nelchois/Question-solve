@@ -1,0 +1,38 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/164673
+```
+SELECT B.TITLE, B.BOARD_ID, R.REPLY_ID, R.WRITER_ID, R.CONTENTS, DATE_FORMAT(R.CREATED_DATE, '%Y-%m-%d') as CREATE_DATE
+FROM USED_GOODS_BOARD B INNER JOIN USED_GOODS_REPLY R ON B.BOARD_ID = R.BOARD_ID
+WHERE DATE_FORMAT(B.CREATED_DATE, '%Y-%m') = '2022-10'
+ORDER BY CREATE_DATE ASC, B.TITLE
+```
+
+https://school.programmers.co.kr/learn/courses/30/lessons/131112
+```
+SELECT FACTORY_ID, FACTORY_NAME, ADDRESS
+FROM FOOD_FACTORY
+WHERE ADDRESS LIKE '%강원도%'
+ORDER BY FACTORY_ID ASC
+```
+
+https://school.programmers.co.kr/learn/courses/30/lessons/132203
+```
+SELECT DR_NAME, DR_ID, MCDP_CD, DATE_FORMAT(HIRE_YMD, '%Y-%m-%d') AS HIRE_YMD
+FROM DOCTOR
+WHERE MCDP_CD = 'CS' or MCDP_CD = 'GS'
+ORDER BY HIRE_YMD DESC, DR_NAME ASC
+```
+
+https://school.programmers.co.kr/learn/courses/30/lessons/144853
+```
+SELECT BOOK_ID, DATE_FORMAT(PUBLISHED_DATE, '%Y-%m-%d') AS PUBLISHED_DATE
+FROM BOOK
+WHERE PUBLISHED_DATE between '2021-01-01' and '2021-12-31' AND CATEGORY in ('인문')
+ORDER BY PUBLISHED_DATE ASC
+```
+
+https://school.programmers.co.kr/learn/courses/30/lessons/151136
+```
+SELECT ROUND(AVG(DAILY_FEE)) as AVERAGE_FEE
+FROM CAR_RENTAL_COMPANY_CAR 
+WHERE CAR_TYPE in ('SUV')
+```
