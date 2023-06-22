@@ -39,3 +39,16 @@ SELECT ROUND(AVG(DAILY_FEE)) as AVERAGE_FEE
 FROM CAR_RENTAL_COMPANY_CAR 
 WHERE CAR_TYPE in ('SUV')
 ```
+
+LINK: [PROGRAMMERS](https://school.programmers.co.kr/learn/courses/30/lessons/131697)
+```
+SELECT MAX(PRICE) AS MAX_PRICE
+FROM PRODUCT
+```
+
+LINK: [PROGRAMMERS](https://school.programmers.co.kr/learn/courses/30/lessons/59415)
+```
+SELECT MAX(DATETIME) AS 시간
+FROM ANIMAL_INS
+```
+
