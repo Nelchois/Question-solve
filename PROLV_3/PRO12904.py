@@ -39,7 +39,7 @@ def odd(num_dict, base, n):
 def solution(s):
     num_dict = dict()
     n = len(s)
-    answer = 0
+    answer = 1
     for idx, alpha in enumerate(s):
         num_dict[str(idx)] = alpha
     for base in range(1, len(s) - 1):
@@ -48,6 +48,4 @@ def solution(s):
         ans = max(a, b)
         if ans > answer:
             answer = ans
-    if answer == 0:
-        answer += 1
     return answer
