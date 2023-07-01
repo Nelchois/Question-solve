@@ -1,4 +1,5 @@
 #https://school.programmers.co.kr/learn/courses/30/lessons/12904#qna
+#BLOG LINK: https://readydeveloperone.blogspot.com/2023/06/12904.html
 def even(num_dict, base, le_base, n):
     if le_base > n - base - 1:
         lim = n - base - 1
